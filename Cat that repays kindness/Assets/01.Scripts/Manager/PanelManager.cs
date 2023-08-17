@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using UnityEngine.Video;
 
 public class PanelManager : MonoBehaviour
 {
     public static PanelManager instance;
 
-    [SerializeField] float during;
+    [SerializeField] float duration;
 
     private void Awake() {
         
@@ -18,11 +19,14 @@ public class PanelManager : MonoBehaviour
             instance = this;
     }
     
-    public void Move(GameObject panel, GameObject bPanel) {
+    public void Move(Panel panel) {
 
         Debug.Log("불러짐");
 
-        panel.transform.DOMove(new Vector3(-1080, 0 , 0), during); // ?왜 지랄 정신차료~
-        // bPanel.transform.DOMoveX(-1080, during * 2).SetEase(Ease.InExpo);
+        panel.Obj.transform.DOMove(panel.End, duration).SetEase(Ease.OutExpo);
+
+        // if (panel.SubObj != null)
+        //     panel.SubObj.DOFade(0f, duration).SetEase(Ease.OutExpo);
+        // material이 안 먹힌다...
     }
 }

@@ -6,14 +6,24 @@ using UnityEngine.EventSystems;
 
 public class ButtonManager : MonoBehaviour
 {
-    // public void PanelMove() {
+    public void ButtonClick() {
 
-    //     GameObject curBtn = EventSystem.current.currentSelectedGameObject;
-    //     Button btn = curBtn.GetComponent<Button>();
+        GameObject curBtn = EventSystem.current.currentSelectedGameObject;
 
-    //     if (curBtn.CompareTag("Button")) {
+        switch(curBtn.tag) {
 
-    //         PanelManager.instance.Move(btn.panel, btn.bPanel);
-    //     }
-    // }
+            case "Button" : {
+
+                Panel panel = curBtn.GetComponent<Panel>();
+                PanelManager.instance.Move(panel);
+            }
+            break;
+
+            case "Item" : {
+
+                
+            }
+            break;
+        }
+    }
 }

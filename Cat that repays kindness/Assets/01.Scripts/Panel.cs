@@ -9,9 +9,12 @@ public class Panel : MonoBehaviour
     [SerializeField] private GameObject obj;
     public GameObject Obj { get { return obj; }}
 
-    [SerializeField] private float speed;
-    public float Speed { get { return speed; }}
+    [SerializeField] private Color subObj;
+    public Color SubObj { get { return subObj; }}
 
-    [SerializeField] private Vector3 dir;
-    public Vector3 Dir { get { return dir; }}
+    // [SerializeField] private float duration;
+    // public float Duration { get { return duration; }}
+
+    [SerializeField] private Vector3 end;
+    public Vector3 End { get { return end; }}
 }
