@@ -19,7 +19,7 @@ public class PanelManager : MonoBehaviour
             instance = this;
     }
     
-    public void Move(Panel panel) {
+    public void Move(PanelAtbt panel) {
 
         Debug.Log("불러짐");
 

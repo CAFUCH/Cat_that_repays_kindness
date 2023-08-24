@@ -15,7 +15,9 @@ public class ButtonManager : MonoBehaviour
             case "Button" : {
 
                 Panel panel = curBtn.GetComponent<Panel>();
-                PanelManager.instance.Move(panel);
+
+                foreach (PanelAtbt p in panel.panels)
+                    PanelManager.instance.Move(p);
             }
             break;
 
