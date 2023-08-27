@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
+    // 테스트 용
+    private Rigidbody2D rigid;
+    
+    float speed = 500f;
+
+    private void Awake() {
         
+        rigid = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    private void Update() {
         
+        float x = Input.GetAxis("Horizontal");
+        float y = Input.GetAxis("Vertical");
+
+        Vector2 dir = new Vector2(x, y);
+
+        rigid.velocity = dir.normalized * speed;
     }
 }
