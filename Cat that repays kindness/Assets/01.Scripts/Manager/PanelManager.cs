@@ -21,12 +21,8 @@ public class PanelManager : MonoBehaviour
     
     public void Move(PanelAtbt panel) {
 
-        Debug.Log("불러짐");
+        DOTween.KillAll();
 
-        panel.Obj.transform.DOMove(panel.End, duration).SetEase(Ease.OutExpo);
-
-        // if (panel.SubObj != null)
-        //     panel.SubObj.DOFade(0f, duration).SetEase(Ease.OutExpo);
-        // material이 안 먹힌다...
+        panel.Obj.GetComponent<RectTransform>().DOAnchorPos(panel.End, duration).SetEase(Ease.OutExpo);
     }
 }

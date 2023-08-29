@@ -7,7 +7,7 @@ public class Move : MonoBehaviour
     // 테스트 용
     private Rigidbody2D rigid;
     
-    float speed = 500f;
+    float speed = 5f;
 
     private void Awake() {
         
